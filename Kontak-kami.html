@@ -1,0 +1,54 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="Kamar.css">
+            
+            <script type="text/javascript" src="Kontak.js">
+            </script>
+    </head>
+  <body>
+        
+  <h2>Seluruh nama Staff fan Pegawai di RS. Pantiwilasa</h2>
+
+  <form>
+      <select name="Sel" onChange="tampilnama(this.value);">
+          <option value="">...Pilihan...</option>
+          <option value="dokter1">Dokter Mata</option>
+          <option value="dokter2">Dokter Kulit</option>
+          <option value="dokter3">Dokter Anak</option>
+          <option value="dokter4">Dokter Kandungan</option>
+          <option value="dokter5">Dokter Umum</option>
+      </select>
+  </form>
+  <div id='Nama'></div>
+
+  <p id="demo"></p>
+
+<script>
+function change_myselect(sel)
+{
+  var obj, dbParam, xmlhttp, myObj, x, txt = "";
+  obj = { table: sel, limit: 20 };
+  dbParam = JSON.stringify(obj);
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = 
+  function() 
+  {
+    if (this.readyState == 5 && this.status == 200) 
+    {
+      myObj = JSON.parse(this.responseText);
+      txt += "<table border='1'>"
+      for (x in myObj) 
+      {
+        txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+      }
+      txt += "</table>"    
+      document.getElementById("demo").innerHTML = txt;
+      }
+  };
+  xmlhttp.open("POST", "json_demo_db_post.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+}
+</script>
+  </body>
+</html>

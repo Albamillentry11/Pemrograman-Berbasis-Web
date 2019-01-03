@@ -1,0 +1,26 @@
+.judul
+{
+    display:flex;
+	justify-content :flex-start;
+}
+
+.leftjudul
+{
+
+    margin: 10px;
+    float: left;
+}
+
+.rightjudul
+{
+    margin: auto;
+    font-size: 20px;
+    vertical-align: 100px;
+    padding: 20px;
+    float: left;
+}
+
+    .rightjudul p
+    {
+        text-align: center;
+    }

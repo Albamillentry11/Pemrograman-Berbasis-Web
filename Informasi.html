@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="Kamar.css">
+        <script type="text/javascript" src="Kamar.js">
+        </script>
+    </head>
+    <body>
+        <h2>Informasi ruangan yang ada di RS. PANTIWILASA</h2>
+        
+        <form>
+            <select name="Ruang" onChange="tampilkamar(this.value);">
+                <option value="">...Pilihan...</option>
+                <option value="R. ANGGREK BEDAH">R. ANGGREK BEDAH</option>
+                <option value="R. BOUGENVILLE OBSGYN">R. BOUGENVILLE OBSGYN</option>
+                <option value="R. CEMPAKA">R. CEMPAKA</option>
+                <option value="R. DAHLIA ANAK-ANAK">R. DAHLIA ANAK-ANAK</option>
+            </select>
+        </form>
+        <div id='Kamar'></div>
+    </body>
+</html>
